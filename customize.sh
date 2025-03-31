@@ -21,10 +21,10 @@ cd $(dirname "$0")
 
 echo "Parse flash type: $1"
 # simple check if partition table is valid
-if [ -z $( echo -n "$2" | grep '),-(firmware)') ]; then
-	echo "Invalid mtd partition table!"
-	exit 1
-fi
+# if [ -z $( echo -n "$2" | grep '),-(firmware)') ]; then
+# 	echo "Invalid mtd partition table!"
+# 	exit 1
+# fi
 DEFCONFIG="configs/mt7621_build_defconfig"
 if [ "$1" = 'NOR' ]; then
 	cp configs/mt7621_nor_template_defconfig ${DEFCONFIG}
